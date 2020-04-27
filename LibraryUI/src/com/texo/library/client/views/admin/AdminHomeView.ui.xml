@@ -1,0 +1,39 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui'
+	xmlns:m='urn:import:gwt.material.design.client.ui'>
+	<ui:style>
+	.topVerticalPanel {
+		padding: 0px;
+	}
+	
+	.headerPanel {
+		position: absolute;
+		width: 100%;
+		height: 50px;
+	}
+	
+	.middlePanel {
+		position: absolute;
+		width: 100%;
+		height: 500px;
+		top: 50px;
+		
+	}
+	
+	.footerPanel {
+		position: absolute;
+		width: 100%;
+		top: 500px;
+		height: 40px;
+	}
+	</ui:style>
+	<g:HTMLPanel>
+		<g:HTMLPanel ui:field="rootVerticalPanel"
+			styleName="{style.topVerticalPanel}">
+			<g:HTMLPanel ui:field="headerPanel"></g:HTMLPanel>
+			<g:HTMLPanel ui:field="middlePanel"></g:HTMLPanel>
+			<g:HTMLPanel ui:field="footerPanel"></g:HTMLPanel>
+			<!-- <g:HorizontalPanel spacing="0" styleName="{style.footerPanel}"> </g:HorizontalPanel> -->
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>

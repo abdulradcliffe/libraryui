@@ -1,0 +1,29 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui'
+	xmlns:m="urn:import:gwt.material.design.client.ui">
+	<ui:style>
+	.LVLoginArea {
+		position: fixed;
+		left: 380px;
+		top: 90px;
+		width: 475px;
+		background-color: aquamarin
+	}
+	
+	.LVTitleLabelStyle {
+		font-size: x-large;
+	}
+	</ui:style>
+	<g:HTMLPanel styleName='{style.LVLoginArea}'>
+		<g:VerticalPanel>
+			<g:Label styleName='{style.LVTitleLabelStyle}'
+				text="Welcome to Texo! A Complete Library Management System"></g:Label>
+			<m:MaterialTextBox ui:field="usernameTextBox"
+				label="Username" validateOnBlur="true" allowBlank="false"></m:MaterialTextBox>
+			<m:MaterialTextBox ui:field="passwordTextBox"
+				label="Password" validateOnBlur="true" allowBlank="false"></m:MaterialTextBox>
+			<m:MaterialButton text="Login" waves="LIGHT"
+				textColor="WHITE" iconType="POLYMER" ui:field="loginButton"></m:MaterialButton>
+		</g:VerticalPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>

@@ -1,0 +1,70 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui'
+	xmlns:m='urn:import:gwt.material.design.client.ui'>
+	<ui:style>
+	.root {
+		position: absolute;
+		width: 200px;
+		height: 100%;
+		background-color: #737373;
+	}
+	
+	.dashboardButton {
+		width: 200px;
+		position: absolute;
+		height: 35px;
+		color: white;
+		font-size: medium;
+	}
+	
+	.booksButton {
+		width: 200px;
+		position: absolute;
+		top: 35px;
+		height: 35px;
+		color: white;
+		font-size: medium;
+	}
+	
+	.packagesButton {
+		width: 200px;
+		position: absolute;
+		top: 70px;
+		height: 35px;
+		color: white;
+		font-size: medium;
+	}
+	
+	.membersButton {
+		width: 200px;
+		position: absolute;
+		top: 105px;
+		height: 35px;
+		color: white;
+		font-size: medium;
+	}
+	
+	.assignedButton {
+		width: 200px;
+		position: absolute;
+		top: 140px;
+		height: 35px;
+		color: white;
+		font-size: medium;
+	}
+	</ui:style>
+	<g:HTMLPanel>
+		<g:HTMLPanel styleName="{style.root}">
+			<g:Button ui:field="dashboardButton"
+				styleName="{style.dashboardButton}" text="DASHBOARD"></g:Button>
+			<g:Button ui:field="booksButton"
+				styleName="{style.booksButton}" text="BOOKS"></g:Button>
+			<g:Button ui:field="packagesButton"
+				styleName="{style.packagesButton}" text="PACKAGES"></g:Button>
+			<g:Button ui:field="membersButton"
+				styleName="{style.membersButton}" text="MEMBERS"></g:Button>
+			<g:Button ui:field="assignedButton"
+				styleName="{style.assignedButton}" text="ASSIGNED"></g:Button>
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>

@@ -1,0 +1,33 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui'
+	xmlns:m='urn:import:gwt.material.design.client.ui'>
+	<ui:style>
+	.middlePanel {
+		height: 500px;
+		position: absolute;
+		top: 50px;
+		width: 100%;
+	}
+	
+	.adminNavigationPanel {
+		position: absolute;
+		width: 200px;
+		height: 100%;
+	}
+	
+	.adminMainView {
+		position: absolute;
+		width: 1100px;
+		left: 200px;
+		height: 100%;
+	}
+	</ui:style>
+	<g:HTMLPanel>
+		<g:HTMLPanel styleName="{style.middlePanel}">
+			<g:HTMLPanel ui:field="adminNavigationPanel"
+				styleName="{style.adminNavigationPanel}"></g:HTMLPanel>
+			<g:HTMLPanel ui:field="adminMainView"
+				styleName="{style.adminMainView}"></g:HTMLPanel>
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>
