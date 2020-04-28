@@ -22,7 +22,7 @@
 		background-color: #464646;
 		padding: 0px;
 		height: 40px;
-		top: 550px;
+		top: 560px;
 	}
 	</ui:style>
 	<g:HTMLPanel>

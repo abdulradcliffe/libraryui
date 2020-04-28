@@ -6,65 +6,128 @@
 		position: absolute;
 		width: 200px;
 		height: 100%;
-		background-color: #737373;
+		background-color: #464646;
 	}
 	
-	.dashboardButton {
+	.dashboardPanel {
+		padding-bottom: 4px;
+		padding-top: 4px;
+		padding-left: 10px;
+		padding-right: 10px;
 		width: 200px;
+		background-color: #464646;
 		position: absolute;
-		height: 35px;
+		height: 60px;
 		color: white;
 		font-size: medium;
 	}
 	
-	.booksButton {
-		width: 200px;
+	.dashboardIcon {
 		position: absolute;
-		top: 35px;
-		height: 35px;
-		color: white;
-		font-size: medium;
+		top: 10px;
 	}
 	
-	.packagesButton {
-		width: 200px;
+	.dashboardLabel {
 		position: absolute;
-		top: 70px;
-		height: 35px;
-		color: white;
-		font-size: medium;
+		left: 60px;
+		top: 17px;
 	}
 	
-	.membersButton {
+	.booksPanel {
+		padding-bottom: 4px;
+		padding-top: 4px;
+		padding-left: 10px;
+		padding-right: 10px;
 		width: 200px;
+		background-color: #464646;
 		position: absolute;
-		top: 105px;
-		height: 35px;
+		height: 60px;
 		color: white;
 		font-size: medium;
+		top: 60px;
 	}
 	
-	.assignedButton {
+	.packagesPanel {
+		padding-bottom: 4px;
+		padding-top: 4px;
+		padding-left: 10px;
+		padding-right: 10px;
 		width: 200px;
+		background-color: #464646;
 		position: absolute;
-		top: 140px;
-		height: 35px;
+		height: 60px;
 		color: white;
 		font-size: medium;
+		top: 120px;
+	}
+	
+	.membersPanel {
+		padding-bottom: 4px;
+		padding-top: 4px;
+		padding-left: 10px;
+		padding-right: 10px;
+		width: 200px;
+		background-color: #464646;
+		position: absolute;
+		height: 60px;
+		color: white;
+		font-size: medium;
+		top: 180px;
+	}
+	
+	.assignedPanel {
+		padding-bottom: 4px;
+		padding-top: 4px;
+		padding-left: 10px;
+		padding-right: 10px;
+		width: 200px;
+		background-color: #464646;
+		position: absolute;
+		height: 60px;
+		color: white;
+		font-size: medium;
+		top: 240px;
 	}
 	</ui:style>
 	<g:HTMLPanel>
 		<g:HTMLPanel styleName="{style.root}">
-			<g:Button ui:field="dashboardButton"
-				styleName="{style.dashboardButton}" text="DASHBOARD"></g:Button>
-			<g:Button ui:field="booksButton"
-				styleName="{style.booksButton}" text="BOOKS"></g:Button>
-			<g:Button ui:field="packagesButton"
-				styleName="{style.packagesButton}" text="PACKAGES"></g:Button>
-			<g:Button ui:field="membersButton"
-				styleName="{style.membersButton}" text="MEMBERS"></g:Button>
-			<g:Button ui:field="assignedButton"
-				styleName="{style.assignedButton}" text="ASSIGNED"></g:Button>
+			<g:HTMLPanel ui:field="dashboardPanel"
+				styleName="{style.dashboardPanel}">
+				<g:Image url="images/baseline_dashboard_white_18dp.png"
+					styleName="{style.dashboardIcon}"></g:Image>
+				<g:Label styleName="{style.dashboardLabel}">Dashboard</g:Label>
+			</g:HTMLPanel>
+
+
+
+			<g:HTMLPanel ui:field="booksPanel"
+				styleName="{style.booksPanel}">
+				<g:Image url="images/baseline_menu_book_white_18dp.png"
+					styleName="{style.dashboardIcon}"></g:Image>
+				<g:Label styleName="{style.dashboardLabel}">Books</g:Label>
+			</g:HTMLPanel>
+			
+			<g:HTMLPanel ui:field="packagesPanel"
+				styleName="{style.packagesPanel}">
+				<g:Image url="images/baseline_open_in_browser_white_18dp.png"
+					styleName="{style.dashboardIcon}"></g:Image>
+				<g:Label styleName="{style.dashboardLabel}">Packages</g:Label>
+			</g:HTMLPanel>
+			
+			<g:HTMLPanel ui:field="membersPanel"
+				styleName="{style.membersPanel}">
+				<g:Image url="images/baseline_supervisor_account_white_18dp.png"
+					styleName="{style.dashboardIcon}"></g:Image>
+				<g:Label styleName="{style.dashboardLabel}">Members</g:Label>
+			</g:HTMLPanel>
+			
+			<g:HTMLPanel ui:field="assignedPanel"
+				styleName="{style.assignedPanel}">
+				<g:Image url="images/baseline_assignment_turned_in_white_18dp.png"
+					styleName="{style.dashboardIcon}"></g:Image>
+				<g:Label styleName="{style.dashboardLabel}">Assigned</g:Label>
+			</g:HTMLPanel>
+
 		</g:HTMLPanel>
 	</g:HTMLPanel>
 </ui:UiBinder>
