@@ -15,6 +15,7 @@ import com.texo.library.client.presenter.contract.ILoginPresenter;
 import com.texo.library.client.views.LoginView;
 
 import gwt.material.design.client.ui.MaterialLoader;
+import gwt.material.design.client.ui.MaterialToast;
 
 public class LoginPresenter implements ILoginPresenter {
 
@@ -59,14 +60,15 @@ public class LoginPresenter implements ILoginPresenter {
 			Integer statusCode = response.getStatusCode();
 			logger.log(Level.INFO, "onResponseReceived: statusCode=" + statusCode);
 			if (200 == statusCode) {
+				MaterialLoader.loading(false);
 				String responseText = response.getText();
 				logger.log(Level.INFO, "responseText=" + responseText);
-//				if (LOGGED_IN_SUCCESSFULLY.equalsIgnoreCase(responseText.trim())) {
+				if (LOGGED_IN_SUCCESSFULLY.equalsIgnoreCase(responseText.trim())) {
 					AdminHomePresenter p = new AdminHomePresenter();
 					p.show();
-//				} else {
-
-//				}
+				} else {
+					MaterialToast.fireToast("Invalid Credentials. Please try again");
+				}
 			}
 		}
 

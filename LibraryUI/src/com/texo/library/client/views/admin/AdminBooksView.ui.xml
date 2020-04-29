@@ -1,0 +1,17 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui'
+	xmlns:m='urn:import:gwt.material.design.client.ui'>
+	<ui:style>
+	.root {
+		position: absolute;
+		width: 1100px;
+		height: 100%;
+		padding: 10px;
+	}
+	</ui:style>
+	<g:HTMLPanel>
+		<g:HTMLPanel styleName="{style.root}">
+			<g:Label>Books</g:Label>
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>

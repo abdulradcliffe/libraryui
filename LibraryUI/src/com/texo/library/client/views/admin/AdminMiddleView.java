@@ -21,6 +21,9 @@ public class AdminMiddleView extends Composite implements IAdminMiddleView {
 	@UiField
 	HTMLPanel adminNavigationPanel;
 
+	@UiField
+	HTMLPanel adminMainView;
+
 	public AdminMiddleView(IAdminMiddlePresenter presenter) {
 		this.presenter = presenter;
 		initWidget(binder.createAndBindUi(this));
@@ -31,9 +34,14 @@ public class AdminMiddleView extends Composite implements IAdminMiddleView {
 		// TODO Auto-generated method stub
 
 	}
-	
+
 	public void addNavigationPanel(Composite view) {
 		adminNavigationPanel.add(view);
+	}
+	
+	public void changeMainView(Composite view) {
+		adminMainView.clear();
+		adminMainView.add(view);
 	}
 
 	@Override

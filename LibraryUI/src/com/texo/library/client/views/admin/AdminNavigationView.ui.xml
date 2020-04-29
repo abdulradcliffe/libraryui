@@ -95,7 +95,7 @@
 				styleName="{style.dashboardPanel}">
 				<g:Image url="images/baseline_dashboard_white_18dp.png"
 					styleName="{style.dashboardIcon}"></g:Image>
-				<g:Label styleName="{style.dashboardLabel}">Dashboard</g:Label>
+				<g:Label ui:field="dashboardLabel" styleName="{style.dashboardLabel}">Dashboard</g:Label>
 			</g:HTMLPanel>
 
 
@@ -104,28 +104,28 @@
 				styleName="{style.booksPanel}">
 				<g:Image url="images/baseline_menu_book_white_18dp.png"
 					styleName="{style.dashboardIcon}"></g:Image>
-				<g:Label styleName="{style.dashboardLabel}">Books</g:Label>
+				<g:Label ui:field="booksLabel" styleName="{style.dashboardLabel}">Books</g:Label>
 			</g:HTMLPanel>
 			
 			<g:HTMLPanel ui:field="packagesPanel"
 				styleName="{style.packagesPanel}">
 				<g:Image url="images/baseline_open_in_browser_white_18dp.png"
 					styleName="{style.dashboardIcon}"></g:Image>
-				<g:Label styleName="{style.dashboardLabel}">Packages</g:Label>
+				<g:Label ui:field="packagesLabel" styleName="{style.dashboardLabel}">Packages</g:Label>
 			</g:HTMLPanel>
 			
 			<g:HTMLPanel ui:field="membersPanel"
 				styleName="{style.membersPanel}">
 				<g:Image url="images/baseline_supervisor_account_white_18dp.png"
 					styleName="{style.dashboardIcon}"></g:Image>
-				<g:Label styleName="{style.dashboardLabel}">Members</g:Label>
+				<g:Label ui:field="membersLabel" styleName="{style.dashboardLabel}">Members</g:Label>
 			</g:HTMLPanel>
 			
 			<g:HTMLPanel ui:field="assignedPanel"
 				styleName="{style.assignedPanel}">
 				<g:Image url="images/baseline_assignment_turned_in_white_18dp.png"
 					styleName="{style.dashboardIcon}"></g:Image>
-				<g:Label styleName="{style.dashboardLabel}">Assigned</g:Label>
+				<g:Label ui:field="assignedLabel" styleName="{style.dashboardLabel}">Assigned</g:Label>
 			</g:HTMLPanel>
 
 		</g:HTMLPanel>
