@@ -10,34 +10,22 @@ public class User {
 
 	}
 
-	public User(Integer id, String name, String email) {
-		this.id = id;
-		this.name = name;
-		this.email = email;
+	public User(UserJSObject jsObject) {
+		this.id = jsObject.getId();
+		this.name = jsObject.getName();
+		this.email = jsObject.getEmail();
 	}
 
 	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
+		return this.id;
 	}
 
 	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
+		return this.name;
 	}
 
 	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
+		return this.email;
 	}
 
 }
