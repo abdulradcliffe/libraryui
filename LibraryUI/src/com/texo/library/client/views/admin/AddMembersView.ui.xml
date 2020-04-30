@@ -1,0 +1,124 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui'
+	xmlns:m='urn:import:gwt.material.design.client.ui'
+	xmlns:c="urn:import:com.google.gwt.user.cellview.client">
+	<ui:style>
+	.root {
+		position: absolute;
+		width: 1054px;
+		height: 100%;
+		padding: 10px;
+	}
+	
+	.addMembersLabel {
+		font-size: large;
+		top: 20px;
+		left: 60px;
+		position: absolute;
+	}
+	
+	.addUserButton {
+		position: absolute;
+		right: 35px;
+		top: 15px;
+		background-color: #54a7ff;
+		padding-bottom: 3px;
+		padding-top: 3px;
+		padding-left: 10px;
+		padding-right: 10px;
+		color: white;
+		font-size: medium;
+	}
+	
+	.fullNameLabel {
+		position: absolute;
+		top: 100px;
+		left: 75px;
+		font-size: initial;
+	}
+	
+	.emailLabel {
+		position: absolute;
+		top: 170px;
+		left: 75px;
+		font-size: initial;
+	}
+	
+	.passwordLabel {
+		position: absolute;
+		top: 170px;
+		left: 600px;
+		font-size: initial;
+	}
+	
+	.roleLabel {
+		position: absolute;
+		top: 100px;
+		left: 600px;
+		font-size: initial;
+	}
+	
+	.fullNameBox {
+		position: absolute;
+		top: 95px;
+		left: 190px;
+		font-size: initial;
+	}
+	
+	.emailBox {
+		position: absolute;
+		top: 165px;
+		left: 190px;
+		font-size: initial;
+	}
+	
+	.passwordBox {
+		position: absolute;
+		top: 165px;
+		left: 700px;
+		font-size: initial;
+	}
+	
+	.roleBox {
+		position: absolute;
+		top: 95px;
+		left: 700px;
+		width: 204px;
+		height: 26px;
+	}
+	
+	.dots {
+		position: absolute;
+		top: 15px;
+		left: 15px;
+		width: 30px;
+		height: 30px;
+	}
+	
+	.confirmButtonRow {
+		width: 901px;
+		height: 50px;
+		position: absolute;
+		top: 395px;
+		left: 120px;
+		background-color: blue;
+	}
+	</ui:style>
+	<g:HTMLPanel>
+		<g:HTMLPanel styleName="{style.root}">
+			<g:Image url="images/baseline_list_black_18dp.png"
+				styleName="{style.dots}"></g:Image>
+			<g:Label styleName="{style.addMembersLabel}">Add New Member</g:Label>
+			<g:Label styleName="{style.fullNameLabel}">Full Name</g:Label>
+			<g:TextBox styleName="{style.fullNameBox}"></g:TextBox>
+			<g:Label styleName="{style.roleLabel}">Role</g:Label>
+			<g:ListBox styleName="{style.roleBox}">
+			</g:ListBox>
+			<g:Label styleName="{style.emailLabel}">Email</g:Label>
+			<g:TextBox styleName="{style.emailBox}"></g:TextBox>
+			<g:Label styleName="{style.passwordLabel}">Password</g:Label>
+			<g:TextBox styleName="{style.passwordBox}"></g:TextBox>
+			<g:HTMLPanel styleName="{style.confirmButtonRow}"></g:HTMLPanel>
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>
