@@ -1,22 +1,22 @@
 package com.texo.library.client.views.admin;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.cellview.client.CellTable;
 import com.google.gwt.user.cellview.client.HasKeyboardSelectionPolicy.KeyboardSelectionPolicy;
 import com.google.gwt.user.cellview.client.TextColumn;
 import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HTMLPanel;
-import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.view.client.SelectionChangeEvent;
 import com.google.gwt.view.client.SingleSelectionModel;
-import com.texo.library.client.model.User;
 import com.texo.library.client.model.User;
 import com.texo.library.client.presenter.contract.IAdminMembersPresenter;
 import com.texo.library.client.views.contracts.IAdminMembersView;
@@ -33,6 +33,9 @@ public class AdminMembersView extends Composite implements IAdminMembersView {
 
 	@UiField
 	HTMLPanel membersTable;
+	
+	@UiField
+	Button addUserButton;
 	
 	private CellTable<User> cellTableOfUser;
 
@@ -89,6 +92,14 @@ public class AdminMembersView extends Composite implements IAdminMembersView {
 //	    vp.add(cellTableOfUser);
 	    membersTable.add(flexTable);
 	    membersTable.add(cellTableOfUser);
+	    
+	    addUserButton.addClickHandler(new  ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				AdminMembersView.this.presenter.onAddUserButtonClick();
+			}
+		});
 	}
 	
 	public void setMembersData(List<User> users) {

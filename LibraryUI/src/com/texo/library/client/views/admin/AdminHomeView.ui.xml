@@ -4,17 +4,19 @@
 	<ui:style>
 	.topVerticalPanel {
 		padding: 0px;
+		width: 1200px;
+		height: 600px;
 	}
 	
 	.headerPanel {
 		position: absolute;
-		width: 100%;
+		width: 1200px;
 		height: 60px;
 	}
 	
 	.middlePanel {
 		position: absolute;
-		width: 100%;
+		width: 1200px;
 		height: 500px;
 		top: 60px;
 		
@@ -22,8 +24,8 @@
 	
 	.footerPanel {
 		position: absolute;
-		width: 100%;
-		top: 510px;
+		width: 1200px;
+		top: 560px;
 		height: 40px;
 	}
 	</ui:style>

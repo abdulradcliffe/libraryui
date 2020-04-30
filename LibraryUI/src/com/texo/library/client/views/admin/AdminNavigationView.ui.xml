@@ -12,8 +12,6 @@
 	.dashboardPanel {
 		padding-bottom: 4px;
 		padding-top: 4px;
-		padding-left: 10px;
-		padding-right: 10px;
 		width: 200px;
 		background-color: #464646;
 		position: absolute;
@@ -36,8 +34,6 @@
 	.booksPanel {
 		padding-bottom: 4px;
 		padding-top: 4px;
-		padding-left: 10px;
-		padding-right: 10px;
 		width: 200px;
 		background-color: #464646;
 		position: absolute;
@@ -50,8 +46,6 @@
 	.packagesPanel {
 		padding-bottom: 4px;
 		padding-top: 4px;
-		padding-left: 10px;
-		padding-right: 10px;
 		width: 200px;
 		background-color: #464646;
 		position: absolute;
@@ -64,8 +58,6 @@
 	.membersPanel {
 		padding-bottom: 4px;
 		padding-top: 4px;
-		padding-left: 10px;
-		padding-right: 10px;
 		width: 200px;
 		background-color: #464646;
 		position: absolute;
@@ -78,8 +70,6 @@
 	.assignedPanel {
 		padding-bottom: 4px;
 		padding-top: 4px;
-		padding-left: 10px;
-		padding-right: 10px;
 		width: 200px;
 		background-color: #464646;
 		position: absolute;

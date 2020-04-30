@@ -5,25 +5,64 @@
 	.LVLoginArea {
 		position: fixed;
 		left: 380px;
-		top: 90px;
-		width: 475px;
+		top: 100px;
+		width: 500px;
 		background-color: aquamarin
 	}
 	
 	.LVTitleLabelStyle {
 		font-size: x-large;
 	}
+	
+	.emailLabel {
+		position: absolute;
+		top: 80px;
+		font-size: larger;
+	}
+	
+	.passwordLabel {
+		position: absolute;
+		top: 135px;
+		font-size: larger;
+	}
+	
+	.emailBox {
+		position: absolute;
+		left: 120px;
+		top: 75px;
+		height: 20px;
+		width: 200px;
+	}
+	
+	.passwordBox {
+		position: absolute;
+		top: 130px;
+		left: 120px;
+		height: 20px;
+		width: 200px;
+	}
+	
+	.loginButton {
+		position: absolute;
+		top: 185px;
+		left: 120px;
+		width: 100px;
+		height: 32px;
+	}
 	</ui:style>
 	<g:HTMLPanel styleName='{style.LVLoginArea}'>
-		<g:VerticalPanel>
-			<g:Label styleName='{style.LVTitleLabelStyle}'
-				text="Welcome to Texo! A Complete Library Management System"></g:Label>
-			<m:MaterialTextBox ui:field="usernameTextBox"
-				label="Username" validateOnBlur="true" allowBlank="false"></m:MaterialTextBox>
-			<m:MaterialTextBox ui:field="passwordTextBox"
-				label="Password" validateOnBlur="true" allowBlank="false"></m:MaterialTextBox>
-			<m:MaterialButton text="Login" waves="LIGHT"
-				textColor="WHITE" iconType="POLYMER" ui:field="loginButton"></m:MaterialButton>
-		</g:VerticalPanel>
+
+		<g:Label styleName='{style.LVTitleLabelStyle}'
+			text="Welcome to Texo! A Complete Library Management System"></g:Label>
+
+		<g:Label styleName="{style.emailLabel}">Email</g:Label>
+		<g:TextBox styleName="{style.emailBox}"
+			ui:field="usernameTextBox"></g:TextBox>
+		<g:Label styleName="{style.passwordLabel}">Password</g:Label>
+		<g:PasswordTextBox styleName="{style.passwordBox}"
+			ui:field="passwordTextBox"></g:PasswordTextBox>
+		<g:Button styleName="{style.loginButton}" text="Login"
+			ui:field="loginButton"></g:Button>
+
 	</g:HTMLPanel>
 </ui:UiBinder>

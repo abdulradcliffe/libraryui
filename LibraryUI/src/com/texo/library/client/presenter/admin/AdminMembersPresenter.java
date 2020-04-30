@@ -13,6 +13,8 @@ import com.google.gwt.http.client.RequestCallback;
 import com.google.gwt.http.client.Response;
 import com.google.gwt.user.client.ui.Composite;
 import com.texo.library.client.api.APICaller;
+import com.texo.library.client.listeners.IAddUserButtonClickEventListener;
+import com.texo.library.client.listeners.ListenerFactory;
 import com.texo.library.client.model.User;
 import com.texo.library.client.model.UserJSObject;
 import com.texo.library.client.presenter.contract.IAdminMembersPresenter;
@@ -74,6 +76,15 @@ public class AdminMembersPresenter implements IAdminMembersPresenter {
 	@Override
 	public Composite getView() {
 		return view;
+	}
+
+	@Override
+	public void onAddUserButtonClick() {
+		List<IAddUserButtonClickEventListener> addUserClickListener = ListenerFactory.getInstance()
+				.getAddUserClickListener();
+		for (IAddUserButtonClickEventListener l : addUserClickListener) {
+			l.onAddUserButtonClicked();
+		}
 	}
 
 }

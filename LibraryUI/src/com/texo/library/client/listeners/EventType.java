@@ -2,7 +2,7 @@ package com.texo.library.client.listeners;
 
 public enum EventType {
 
-	NAVIGATION("NAVIGATION");
+	NAVIGATION("NAVIGATION"), ADD_USER_CLICK("ADD_USER_CLICK");
 
 	String value;
 
