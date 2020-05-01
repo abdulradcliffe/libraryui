@@ -44,11 +44,12 @@ public class LoginPresenter implements ILoginPresenter {
 		RequestCallback callback = new LoginCallback();
 		try {
 			builder.sendRequest(null, callback);
+			view.showLoader(true);
 		} catch (RequestException e) {
 			logger.log(Level.SEVERE, "RequestException: " + e);
 			e.printStackTrace();
 		}
-		MaterialLoader.loading(true);
+//		MaterialLoader.loading(true);
 	}
 
 	private class LoginCallback implements RequestCallback {
@@ -60,7 +61,7 @@ public class LoginPresenter implements ILoginPresenter {
 			Integer statusCode = response.getStatusCode();
 			logger.log(Level.INFO, "onResponseReceived: statusCode=" + statusCode);
 			if (200 == statusCode) {
-				MaterialLoader.loading(false);
+				view.showLoader(false);
 				String responseText = response.getText();
 				logger.log(Level.INFO, "responseText=" + responseText);
 				if (LOGGED_IN_SUCCESSFULLY.equalsIgnoreCase(responseText.trim())) {
@@ -75,7 +76,7 @@ public class LoginPresenter implements ILoginPresenter {
 		@Override
 		public void onError(Request request, Throwable exception) {
 			logger.log(Level.SEVERE, "onError: cause=" + exception.getCause());
-
+			view.showLoader(false);
 		}
 
 	}

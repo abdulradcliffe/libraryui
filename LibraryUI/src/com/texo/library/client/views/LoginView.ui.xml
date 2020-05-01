@@ -49,6 +49,15 @@
 		width: 100px;
 		height: 32px;
 	}
+	
+	.loaderImage {
+		position: absolute;
+		top: 185px;
+		left: 180px;
+		width: 80px;
+		height: 80px;
+		display: none;
+	}
 	</ui:style>
 	<g:HTMLPanel styleName='{style.LVLoginArea}'>
 
@@ -63,6 +72,8 @@
 			ui:field="passwordTextBox"></g:PasswordTextBox>
 		<g:Button styleName="{style.loginButton}" text="Login"
 			ui:field="loginButton"></g:Button>
+		<g:Image url="images/loader.gif" ui:field="loaderImage"
+			styleName="{style.loaderImage}"></g:Image>
 
 	</g:HTMLPanel>
 </ui:UiBinder>

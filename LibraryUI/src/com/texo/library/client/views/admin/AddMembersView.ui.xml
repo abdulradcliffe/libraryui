@@ -5,9 +5,8 @@
 	<ui:style>
 	.root {
 		position: absolute;
-		width: 1054px;
-		height: 100%;
-		padding: 10px;
+		width: 985px;
+		height: 440px;
 	}
 	
 	.addMembersLabel {
@@ -95,13 +94,35 @@
 		height: 30px;
 	}
 	
-	.confirmButtonRow {
-		width: 901px;
-		height: 50px;
+	.saveButton {
+		width: 126px;
+		height: 40px;
 		position: absolute;
-		top: 395px;
-		left: 120px;
-		background-color: blue;
+		top: 240px;
+		left: 528px;
+		background-color: #54a7ff;
+		color: white;
+		font-size: medium;
+	}
+	
+	.cancelButton {
+		width: 122px;
+		height: 40px;
+		position: absolute;
+		top: 240px;
+		left: 311px;
+		background-color: red;
+		color: white;
+		font-size: medium;
+	}
+	
+	.loaderImage {
+		position: absolute;
+		top: 240px;
+		left: 435px;
+		width: 60px;
+		height: 60px;
+		display: none;
 	}
 	</ui:style>
 	<g:HTMLPanel>
@@ -110,15 +131,24 @@
 				styleName="{style.dots}"></g:Image>
 			<g:Label styleName="{style.addMembersLabel}">Add New Member</g:Label>
 			<g:Label styleName="{style.fullNameLabel}">Full Name</g:Label>
-			<g:TextBox styleName="{style.fullNameBox}"></g:TextBox>
+			<g:TextBox ui:field="fullNameTextBox"
+				styleName="{style.fullNameBox}"></g:TextBox>
 			<g:Label styleName="{style.roleLabel}">Role</g:Label>
-			<g:ListBox styleName="{style.roleBox}">
+			<g:ListBox ui:field="roleDropDown"
+				styleName="{style.roleBox}">
 			</g:ListBox>
 			<g:Label styleName="{style.emailLabel}">Email</g:Label>
-			<g:TextBox styleName="{style.emailBox}"></g:TextBox>
+			<g:TextBox ui:field="emailTextBox"
+				styleName="{style.emailBox}"></g:TextBox>
 			<g:Label styleName="{style.passwordLabel}">Password</g:Label>
-			<g:TextBox styleName="{style.passwordBox}"></g:TextBox>
-			<g:HTMLPanel styleName="{style.confirmButtonRow}"></g:HTMLPanel>
+			<g:TextBox ui:field="passwordTextBox"
+				styleName="{style.passwordBox}"></g:TextBox>
+			<g:Button ui:field="cancelButton"
+				styleName="{style.cancelButton}">Cancel</g:Button>
+			<g:Button ui:field="saveButton"
+				styleName="{style.saveButton}">Save</g:Button>
+			<g:Image url="images/loader.gif" ui:field="loaderImage"
+				styleName="{style.loaderImage}"></g:Image>
 		</g:HTMLPanel>
 	</g:HTMLPanel>
 </ui:UiBinder>

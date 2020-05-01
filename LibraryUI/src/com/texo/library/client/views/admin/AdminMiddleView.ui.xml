@@ -5,7 +5,7 @@
 	.middlePanel {
 		height: 500px;
 		position: absolute;
-		top: 60px;
+		top: 70px;
 		width: 1200px;
 	}
 	

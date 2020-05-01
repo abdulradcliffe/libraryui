@@ -3,7 +3,6 @@
 	xmlns:m='urn:import:gwt.material.design.client.ui'>
 	<ui:style>
 	.topVerticalPanel {
-		padding: 0px;
 		width: 1200px;
 		height: 600px;
 	}
@@ -18,14 +17,14 @@
 		position: absolute;
 		width: 1200px;
 		height: 500px;
-		top: 60px;
+		top: 70px;
 		
 	}
 	
 	.footerPanel {
 		position: absolute;
 		width: 1200px;
-		top: 560px;
+		top: 570px;
 		height: 40px;
 	}
 	</ui:style>
