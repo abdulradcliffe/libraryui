@@ -16,6 +16,7 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Image;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.texo.library.client.presenter.contract.IAddMembersPresenter;
@@ -32,6 +33,8 @@ public class AddMembersView extends Composite implements IAddMembersView {
 	private static final String ADMINISTRATOR = "Administrator";
 
 	private static final String PLEASE_SELECT = "-- Please Select --";
+
+	private static final String GREEN = "#008000";
 
 	interface AddMembersViewUiBinder extends UiBinder<HTMLPanel, AddMembersView> {
 
@@ -149,16 +152,26 @@ public class AddMembersView extends Composite implements IAddMembersView {
 		}
 	}
 
+	@UiField
+	Label infoMessage;
+
 	public void showLoaer(boolean show) {
 		if (show) {
-			loaderImage.getElement().getStyle().setDisplay(Display.BLOCK);
 			cancelButton.getElement().getStyle().setDisplay(Display.NONE);
 			saveButton.getElement().getStyle().setDisplay(Display.NONE);
+			infoMessage.getElement().getStyle().setDisplay(Display.NONE);
+			loaderImage.getElement().getStyle().setDisplay(Display.BLOCK);
 		} else {
 			loaderImage.getElement().getStyle().setDisplay(Display.NONE);
 			cancelButton.getElement().getStyle().setDisplay(Display.BLOCK);
 			saveButton.getElement().getStyle().setDisplay(Display.BLOCK);
 		}
+	}
+
+	public void setInfoMessage(String info) {
+		infoMessage.getElement().getStyle().setColor(GREEN);
+		infoMessage.getElement().getStyle().setDisplay(Display.BLOCK);
+		infoMessage.setText(info);
 	}
 
 	@Override
@@ -171,6 +184,12 @@ public class AddMembersView extends Composite implements IAddMembersView {
 	public void close() {
 		// TODO Auto-generated method stub
 
+	}
+
+	public void setErrorMessage(String info) {
+		infoMessage.getElement().getStyle().setColor(RED);
+		infoMessage.getElement().getStyle().setDisplay(Display.BLOCK);
+		infoMessage.setText(info);
 	}
 
 }

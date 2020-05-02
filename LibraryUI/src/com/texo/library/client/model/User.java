@@ -5,6 +5,15 @@ public class User {
 	private Integer id;
 	private String name;
 	private String email;
+	private String role;
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
 
 	public User() {
 
@@ -14,6 +23,7 @@ public class User {
 		this.id = jsObject.getId();
 		this.name = jsObject.getName();
 		this.email = jsObject.getEmail();
+		this.role = jsObject.getRole();
 	}
 
 	public Integer getId() {

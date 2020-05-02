@@ -50,12 +50,36 @@
 		color: white;
 		font-size: medium;
 	}
+	
+	.searchUserTextBox {
+		top: 20px;
+		left: 280px;
+		position: absolute;
+		width: 150px;
+		height: 20px;
+	}
+	
+	.searchUserButton {
+		top: 20px;
+		left: 450px;
+		position: absolute;
+		width: 70px;
+		height: 26px;
+		background-color: #54a7ff;
+		height: 26px;
+		color: white;
+		font-size: medium;
+	}
 	</ui:style>
 	<g:HTMLPanel>
 		<g:HTMLPanel styleName="{style.root}">
 			<g:Image url="images/baseline_list_black_18dp.png"
 				styleName="{style.dots}"></g:Image>
 			<g:Label styleName="{style.membersLabel}">All Members</g:Label>
+			<g:TextBox ui:field="searchUserTextBox"
+				styleName="{style.searchUserTextBox}"></g:TextBox>
+			<g:Button ui:field="searchUserButton"
+				styleName="{style.searchUserButton}">Search</g:Button>
 			<g:Button ui:field="addUserButton" text="Add New User"
 				styleName="{style.addUserButton}"></g:Button>
 			<g:HTMLPanel styleName="{style.membersTableDiv}">

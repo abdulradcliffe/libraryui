@@ -4,4 +4,6 @@ public interface IAdminMembersPresenter extends IPresenter {
 
 	void onAddUserButtonClick();
 
+	void onSearchUserButton(String searchString);
+
 }

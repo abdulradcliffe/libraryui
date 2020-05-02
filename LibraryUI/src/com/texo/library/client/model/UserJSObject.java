@@ -20,4 +20,8 @@ public class UserJSObject extends JavaScriptObject {
 		return this.email;
 	}-*/;
 
+	public final native String getRole() /*-{
+		return this.role;
+	}-*/;
+
 }

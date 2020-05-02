@@ -3,6 +3,7 @@ package com.texo.library.client.presenter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.google.gwt.core.client.JsonUtils;
 import com.google.gwt.http.client.Request;
 import com.google.gwt.http.client.RequestBuilder;
 import com.google.gwt.http.client.RequestCallback;
@@ -10,11 +11,11 @@ import com.google.gwt.http.client.RequestException;
 import com.google.gwt.http.client.Response;
 import com.google.gwt.http.client.URL;
 import com.google.gwt.user.client.ui.RootPanel;
+import com.texo.library.client.model.LoginAPIResponseJSObject;
 import com.texo.library.client.presenter.admin.AdminHomePresenter;
 import com.texo.library.client.presenter.contract.ILoginPresenter;
 import com.texo.library.client.views.LoginView;
 
-import gwt.material.design.client.ui.MaterialLoader;
 import gwt.material.design.client.ui.MaterialToast;
 
 public class LoginPresenter implements ILoginPresenter {
@@ -64,12 +65,15 @@ public class LoginPresenter implements ILoginPresenter {
 				view.showLoader(false);
 				String responseText = response.getText();
 				logger.log(Level.INFO, "responseText=" + responseText);
-				if (LOGGED_IN_SUCCESSFULLY.equalsIgnoreCase(responseText.trim())) {
+				LoginAPIResponseJSObject loginResponse = JsonUtils.safeEval(responseText);
+				if (loginResponse.getStatus()) {
 					AdminHomePresenter p = new AdminHomePresenter();
 					p.show();
 				} else {
-					MaterialToast.fireToast("Invalid Credentials. Please try again");
+					view.showError("ERROR: " + responseText);
 				}
+			} else {
+				view.showError("ERROR: " + response.getText());
 			}
 		}
 

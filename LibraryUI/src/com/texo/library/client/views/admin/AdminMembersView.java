@@ -15,6 +15,7 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HTMLPanel;
+import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.view.client.SelectionChangeEvent;
 import com.google.gwt.view.client.SingleSelectionModel;
 import com.texo.library.client.model.User;
@@ -33,10 +34,16 @@ public class AdminMembersView extends Composite implements IAdminMembersView {
 
 	@UiField
 	HTMLPanel membersTable;
-	
+
 	@UiField
 	Button addUserButton;
-	
+
+	@UiField
+	Button searchUserButton;
+
+	@UiField
+	TextBox searchUserTextBox;
+
 	private CellTable<User> cellTableOfUser;
 
 	public AdminMembersView(IAdminMembersPresenter presenter) {
@@ -73,6 +80,14 @@ public class AdminMembersView extends Composite implements IAdminMembersView {
 		};
 		cellTableOfUser.addColumn(emaiColumn, "Email");
 
+		TextColumn<User> roleColumn = new TextColumn<User>() {
+			@Override
+			public String getValue(User object) {
+				return object.getRole();
+			}
+		};
+		cellTableOfUser.addColumn(roleColumn, "Role");
+
 		final SingleSelectionModel<User> selectionModel = new SingleSelectionModel<User>();
 		cellTableOfUser.setSelectionModel(selectionModel);
 		selectionModel.addSelectionChangeHandler(new SelectionChangeEvent.Handler() {
@@ -85,39 +100,59 @@ public class AdminMembersView extends Composite implements IAdminMembersView {
 				}
 			}
 		});
-		
+
 //		VerticalPanel vp = new VerticalPanel();
 //	    vp.setBorderWidth(1);
 //	    vp.add(flexTable);
 //	    vp.add(cellTableOfUser);
-	    membersTable.add(flexTable);
-	    membersTable.add(cellTableOfUser);
-	    
-	    addUserButton.addClickHandler(new  ClickHandler() {
-			
+		membersTable.add(flexTable);
+		membersTable.add(cellTableOfUser);
+
+		addUserButton.addClickHandler(new ClickHandler() {
+
 			@Override
 			public void onClick(ClickEvent event) {
 				AdminMembersView.this.presenter.onAddUserButtonClick();
 			}
 		});
+
+		searchUserButton.addClickHandler(new ClickHandler() {
+
+			@Override
+			public void onClick(ClickEvent event) {
+				onSearchUserButton();
+			}
+		});
 	}
-	
+
+	protected void onSearchUserButton() {
+		String searchString = searchUserTextBox.getText();
+		if (searchString == null || searchString.trim().equals("")) {
+			return;
+		}
+		presenter.onSearchUserButton(searchString);
+	}
+
 	public void setMembersData(List<User> users) {
 		cellTableOfUser.setRowCount(users.size());
 		cellTableOfUser.setRowData(users);
 	}
-	
-	 private FlexTable createFlexTable() {
-		    FlexTable flexTable = new FlexTable();
+
+	private FlexTable createFlexTable() {
+		FlexTable flexTable = new FlexTable();
 //		    flexTable.setBorderWidth(1);
 //		    flexTable.getFlexCellFormatter().setColSpan(1, 0, 3);
-		    return flexTable;
-		  }
+		return flexTable;
+	}
 
 	@Override
 	public void show() {
-		// TODO Auto-generated method stub
+		refresh();
 
+	}
+
+	private void refresh() {
+		searchUserTextBox.setText("");
 	}
 
 	@Override

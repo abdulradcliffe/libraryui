@@ -124,12 +124,25 @@
 		height: 60px;
 		display: none;
 	}
+	
+	.infoMessage {
+		position: absolute;
+		top: 300px;
+		left: 435px;
+		width: 160px;
+		height: 20px;
+		color: green;
+		font-size: medium;
+	}
+	
+	
 	</ui:style>
 	<g:HTMLPanel>
 		<g:HTMLPanel styleName="{style.root}">
 			<g:Image url="images/baseline_list_black_18dp.png"
 				styleName="{style.dots}"></g:Image>
 			<g:Label styleName="{style.addMembersLabel}">Add New Member</g:Label>
+			
 			<g:Label styleName="{style.fullNameLabel}">Full Name</g:Label>
 			<g:TextBox ui:field="fullNameTextBox"
 				styleName="{style.fullNameBox}"></g:TextBox>
@@ -149,6 +162,8 @@
 				styleName="{style.saveButton}">Save</g:Button>
 			<g:Image url="images/loader.gif" ui:field="loaderImage"
 				styleName="{style.loaderImage}"></g:Image>
+			<g:Label ui:field="infoMessage"
+				styleName="{style.infoMessage}"></g:Label>
 		</g:HTMLPanel>
 	</g:HTMLPanel>
 </ui:UiBinder>

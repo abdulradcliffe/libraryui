@@ -10,6 +10,7 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Image;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.texo.library.client.presenter.contract.ILoginPresenter;
@@ -35,6 +36,9 @@ public class LoginView extends Composite {
 
 	@UiField
 	Image loaderImage;
+
+	@UiField
+	Label infoMessage;
 
 	private ILoginPresenter presenter;
 
@@ -74,6 +78,11 @@ public class LoginView extends Composite {
 		}
 		presenter.onLoginButtonClicked(username, password);
 
+	}
+	
+	public void showError(String error) {
+		infoMessage.getElement().getStyle().setDisplay(Display.BLOCK);
+		infoMessage.setText(error);
 	}
 
 }

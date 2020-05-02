@@ -38,6 +38,7 @@ public class AdminMembersPresenter implements IAdminMembersPresenter {
 	}
 
 	public void refresh() {
+		view.show();
 		RequestCallback callback = new GetAllMembersAPICallback();
 		String url = APICaller.baseUrl + "/user/getAll";
 		MaterialLoader.loading(true);
@@ -85,6 +86,12 @@ public class AdminMembersPresenter implements IAdminMembersPresenter {
 		for (IAddUserButtonClickEventListener l : addUserClickListener) {
 			l.onAddUserButtonClicked();
 		}
+	}
+
+	@Override
+	public void onSearchUserButton(String searchString) {
+		RequestCallback callback;
+		APICaller.call(APICaller.baseUrl + "/user/search?string=" + searchString, new GetAllMembersAPICallback());
 	}
 
 }

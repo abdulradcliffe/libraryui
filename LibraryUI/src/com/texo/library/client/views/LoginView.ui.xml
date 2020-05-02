@@ -58,6 +58,17 @@
 		height: 80px;
 		display: none;
 	}
+	
+	.infoMessage {
+		position: absolute;
+		top: 215px;
+		left: 180px;
+		width: 80px;
+		height: 20px;
+		display: none;
+		color: red;
+		font-size: medium;
+	}
 	</ui:style>
 	<g:HTMLPanel styleName='{style.LVLoginArea}'>
 
@@ -74,6 +85,9 @@
 			ui:field="loginButton"></g:Button>
 		<g:Image url="images/loader.gif" ui:field="loaderImage"
 			styleName="{style.loaderImage}"></g:Image>
+
+		<g:Label ui:field="infoMessage"
+			styleName="{style.infoMessage}"></g:Label>
 
 	</g:HTMLPanel>
 </ui:UiBinder>
